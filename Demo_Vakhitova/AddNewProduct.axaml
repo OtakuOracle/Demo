@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Demo_Vakhitova.AddNewProduct"
+        Title="Добавление">
+    <DockPanel>
+        <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Width="300" Margin="10">
+            <TextBlock Text="Описание"/>
+            <TextBox Height="20" Width="150" x:Name="Description_TextBox" HorizontalAlignment="Left" Margin="0, 5"/>
+            
+            <TextBlock Text="Цена"/>
+            <TextBox Height="20" Width="150" x:Name="Count_TextBox" HorizontalAlignment="Left" Margin="0, 5"/>
+            
+            <TextBlock Text="Ед.измерения"/>
+            <TextBox Height="20" Width="150" x:Name="Unity_TextBox" HorizontalAlignment="Left" Margin="0, 5"/>
+            
+            <TextBlock Text="Количество на складе"/>
+            <TextBox Height="20" Width="150" x:Name="Kolvo_TextBox" HorizontalAlignment="Left" Margin="0, 5"/>
+            
+            <TextBlock Text="Действующая скидка"/>
+            <TextBox Height="20" Width="150" x:Name="Discountnow_TextBox" HorizontalAlignment="Left" Margin="0, 5"/>
+            
+            <Button Content="Добавить" Click="AddProduct_OnClick" Margin="0, 10"/>
+            
+            <TextBlock Text="Наименование"/>
+            <ComboBox Name="Name_ComboBox" SelectionChanged="SelectedName_ComboBox" Margin="0, 5"/> 
+            
+            <TextBlock Text="Категория"/>
+            <ComboBox Name="Category_ComboBox" SelectionChanged="SelectedCategory_ComboBox" Margin="0, 5"/>
+            
+            <TextBlock Text="Производитель"/>
+            <ComboBox Name="Proizv_ComboBox" SelectionChanged="SelectedProizv_ComboBox" Margin="0, 5"/>
+            
+            <TextBlock Text="Поставщик"/>
+            <ComboBox Name="Postavschik_ComboBox" SelectionChanged="SelectedPostavschik_ComboBox" Margin="0, 5"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

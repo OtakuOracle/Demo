@@ -36,8 +36,8 @@ public partial class UserWindow : Window
 
     private void AddNewProduct_Click(object? sender, RoutedEventArgs e)
     {
-        var addNewProductWindow = new AddNewProduct();
-        addNewProductWindow.Show();
+        var addNewProduct = new AddNewProduct();
+        addNewProduct.Show();
     }
 
 }
