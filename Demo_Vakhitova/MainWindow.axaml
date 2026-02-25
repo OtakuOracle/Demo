@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Demo_Vakhitova.MainWindow"
+        x:CompileBindings="True"
+        Title="Авторизация"
+        Icon="Icon/icon.png">
+
+	<DockPanel>
+		<StackPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,20,0,0">
+			<TextBlock Text="Добро пожаловать!"/>
+		
+			<TextBox Width="300" x:Name="LoginTextBox" Watermark="Введите логин"/>
+
+			<StackPanel Orientation="Horizontal">
+			<TextBox Width="260" 
+             x:Name="PasswordTextBox" 
+             PasswordChar="*" 
+             Watermark="Введите пароль" 
+             x:FieldModifier="public"/>
+    <Button Content="👁️" Click="TogglePasswordVisibility"/>
+</StackPanel>
+
+			<StackPanel Spacing="5" Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Content="Войти"
+					Click="AuthorizeButton"
+					Background="Green"
+					Foreground="White"
+					Padding="20,5"/>
+			</StackPanel>
+
+			<TextBlock x:Name="ErrorBlock" Foreground="Red"/>
+		</StackPanel>
+	</DockPanel>
+</Window>
