@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Demo_Vakhitova.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,6 +25,7 @@ public partial class UserWindow : Window
 
     }
 
+
     private void Button_GoBack(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         MainWindow mainWindow = new MainWindow();
@@ -31,5 +33,11 @@ public partial class UserWindow : Window
         Close();
     }
 
+
+    private void AddNewProduct_Click(object? sender, RoutedEventArgs e)
+    {
+        var addNewProductWindow = new AddNewProduct();
+        addNewProductWindow.Show();
+    }
 
 }

@@ -15,10 +15,17 @@
                   Margin="10">
           <Button Click="Button_GoBack" 
                   Content="Выйти" Background="#00FA9A"/>
-          <TextBlock Name="User_TextBlock" 
-                     HorizontalAlignment="Right" 
-                     VerticalAlignment="Center"/>
+
       </StackPanel>
+        <StackPanel DockPanel.Dock="Top"
+                    Orientation="Horizontal"
+                    Spacing="5"
+                    Margin="10">
+             <Button Click="AddNewProduct_Click" 
+                  Content="Добавить" Background="#00FA9A"/>
+
+
+        </StackPanel>
       <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">
 		  <ListBox.ItemTemplate>
 			  <DataTemplate>

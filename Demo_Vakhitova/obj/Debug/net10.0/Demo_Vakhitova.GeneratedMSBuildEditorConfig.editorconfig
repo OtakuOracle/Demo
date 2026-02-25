@@ -25,17 +25,20 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = Demo_Vakhitova
-build_property.ProjectDir = C:\Users\User1.11\Desktop\Demo_Vakhitova\Demo_Vakhitova\
+build_property.ProjectDir = C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/User1.11/Desktop/Demo_Vakhitova/Demo_Vakhitova/App.axaml]
+[C:/Users/User1.11/Desktop/Demo/Demo_Vakhitova/AddNewProdWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/User1.11/Desktop/Demo_Vakhitova/Demo_Vakhitova/MainWindow.axaml]
+[C:/Users/User1.11/Desktop/Demo/Demo_Vakhitova/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/User1.11/Desktop/Demo_Vakhitova/Demo_Vakhitova/UserWindow.axaml]
+[C:/Users/User1.11/Desktop/Demo/Demo_Vakhitova/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/User1.11/Desktop/Demo/Demo_Vakhitova/UserWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
