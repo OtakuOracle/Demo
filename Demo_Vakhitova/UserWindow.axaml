@@ -21,9 +21,16 @@
                     Orientation="Horizontal"
                     Spacing="5"
                     Margin="10">
+			
              <Button Click="AddNewProduct_Click" 
                   Content="Добавить" Background="#00FA9A"/>
+			<TextBox Name="SearchTextBox"
+                     Width="200"
+                     Height="30"
+                     Watermark="Введите наименование товара..."
+                     TextChanged="SearchTextBox_TextChanged" />
 
+=            <Button Content="Сбросить" Click="ResetSearchButton_Click" Background="#FFA07A"/>
 
         </StackPanel>
       <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">
