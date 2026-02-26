@@ -8,82 +8,87 @@
         Title="UserWindow"
         Icon="Icon/icon.png">
 
-	<DockPanel>
-	  <StackPanel DockPanel.Dock="Bottom" 
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom"
                   Orientation="Horizontal"
                   Spacing="5"
                   Margin="10">
-          <Button Click="Button_GoBack" 
+            <Button Click="Button_GoBack"
                   Content="Выйти" Background="#00FA9A"/>
-
-      </StackPanel>
+        </StackPanel>
         <StackPanel DockPanel.Dock="Top"
                     Orientation="Horizontal"
                     Spacing="5"
                     Margin="10">
-			
-             <Button Click="AddNewProduct_Click" 
+
+            <Button Click="AddNewProduct_Click"
                   Content="Добавить" Background="#00FA9A"/>
-			<TextBox Name="SearchTextBox"
+            <TextBox Name="SearchTextBox"
                      Width="200"
                      Height="30"
                      Watermark="Введите наименование товара..."
                      TextChanged="SearchTextBox_TextChanged" />
 
-  <Button Content="Сбросить" Click="ResetSearchButton_Click" Background="#FFA07A"/>
             <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
-                <TextBlock Text="Сортировать по количеству на складе:" VerticalAlignment="Center"/>
-                <Button Content="По возрастанию" Click="SortAscendingButton_Click" Tag="Ascending" Background="#ADD8E6"/>
-                <Button Content="По убыванию" Click="SortDescendingButton_Click" Tag="Descending" Background="#ADD8E6"/>
+                <TextBlock Text="Поставщик:" VerticalAlignment="Center"/>
+                <ComboBox Name="SupplierFilterComboBox" Width="150" Height="30" SelectionChanged="SupplierFilterComboBox_SelectionChanged">
+                </ComboBox>
             </StackPanel>
 
+            <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
+                <TextBlock Text="Сортировать по количеству:" VerticalAlignment="Center"/>
+                <ComboBox Name="SortComboBox" Width="150" Height="30" SelectionChanged="SortComboBox_SelectionChanged">
+                    <ComboBoxItem Content="По возрастанию" Tag="Ascending"/>
+                    <ComboBoxItem Content="По убыванию" Tag="Descending"/>
+                </ComboBox>
+            </StackPanel>
+
+            <Button Content="Сбросить фильтры" Click="ResetSearchButton_Click" Background="#FFA07A"/>
+
         </StackPanel>
-      <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">
-		  <ListBox.ItemTemplate>
-			  <DataTemplate>
-				  <Grid ColumnDefinitions="100,450,*">
-                      <Image Source="{Binding GetPhoto}" Height="80" Width="80" Margin="5"/>
-                      <Grid RowDefinitions="*,*,*,*,*,*,*" Grid.Column="1">
-                          <StackPanel Orientation="Horizontal" Spacing="5">
-							  <TextBlock Text="{Binding Category.CategoryName}"/>
-                              <TextBlock Text="|"
-                                         FontFamily="Times New Roman"/>
-                              <TextBlock Text="{Binding Tovar.TovarName}"/>
-                          </StackPanel>
-                          <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="3" >
-							  <TextBlock Text="Описание товара:"/>
-                              <TextBlock Text="{Binding Description}" 
-                                         TextWrapping="WrapWithOverflow" Width="300"
-                                        />
-                          </StackPanel>
-                          <StackPanel Grid.Row="2" Orientation="Horizontal">
-							  <TextBlock Text="Производитель: "/>
-                              <TextBlock Text="{Binding Proizv.ProizvName}"/>
-                          </StackPanel>
-                          <StackPanel Grid.Row="3" Orientation="Horizontal">
-							  <TextBlock Text="Поставщик: "/>
-                              <TextBlock Text="{Binding Postavschik.PostavschikName}"/>
-                          </StackPanel>
-                          <StackPanel Grid.Row="4" Orientation="Horizontal">
-							  <TextBlock Text="Цена: "/>
-                              <TextBlock Text="{Binding Count}"/>
-                          </StackPanel>
-                          <StackPanel Grid.Row="5" Orientation="Horizontal">
-							  <TextBlock Text="Единица измерения: "/>
-                              <TextBlock Text="{Binding Unity}"/>
-                          </StackPanel>
-                          <StackPanel Grid.Row="6" Orientation="Horizontal">
-							  <TextBlock Text="количество на складу: "/>
-                              <TextBlock Text="{Binding Kolvo}"/>
-                          </StackPanel>
-                      </Grid>
-                      <StackPanel Grid.Column="2">
-                          <TextBlock Text="Действующая скидка:"/>
-                          <TextBlock Text="{Binding Discountnow}"/>
-                      </StackPanel>
-                  </Grid>
-              </DataTemplate>
-          </ListBox.ItemTemplate>
-      </ListBox>
-  </DockPanel>
+        <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="100,450,*">
+                        <Image Source="{Binding GetPhoto}" Height="80" Width="80" Margin="5"/>
+                        <Grid RowDefinitions="*,*,*,*,*,*,*" Grid.Column="1">
+                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                <TextBlock Text="{Binding Category.CategoryName}"/>
+                                <TextBlock Text="|" FontFamily="Times New Roman"/>
+                                <TextBlock Text="{Binding Tovar.TovarName}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="3">
+                                <TextBlock Text="Описание товара:"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="WrapWithOverflow" Width="300"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                <TextBlock Text="Производитель: "/>
+                                <TextBlock Text="{Binding Proizv.ProizvName}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                <TextBlock Text="Поставщик: "/>
+                                <TextBlock Text="{Binding Postavschik.PostavschikName}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                <TextBlock Text="Цена: "/>
+                                <TextBlock Text="{Binding Count}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="5" Orientation="Horizontal">
+                                <TextBlock Text="Единица измерения: "/>
+                                <TextBlock Text="{Binding Unity}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="6" Orientation="Horizontal">
+                                <TextBlock Text="количество на складе: "/>
+                                <TextBlock Text="{Binding Kolvo}"/>
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="Действующая скидка:"/>
+                            <TextBlock Text="{Binding Discountnow}"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
 </Window>

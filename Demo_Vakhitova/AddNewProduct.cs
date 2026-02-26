@@ -58,8 +58,8 @@ public partial class AddNewProduct : Window
         }
         catch (Exception ex)
         {
-
-            await MessageBox.ShowAsync($": {ex.Message}", "Ошибка загрузки данных");
+            //проверить
+            await MsBox.Avalonia.MessageBox.ShowAsync($"Ошибка загрузки данных: {ex.Message}", "Ошибка загрузки данных", ButtonEnum.Ok, Icon.Error); 
         }
     }
 
@@ -113,7 +113,7 @@ public partial class AddNewProduct : Window
             string.IsNullOrWhiteSpace(Kolvo_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Discountnow_TextBox.Text))
         {
-            await MessageBox.ShowAsync("Пожалуйста, заполните все текстовые поля.", "Ошибка");
+            await MsBox.Avalonia.MessageBox.ShowAsync("Пожалуйста, заполните все текстовые поля.", "Ошибка", ButtonEnum.Ok, Icon.Warning);
             return;
         }
 
@@ -121,14 +121,14 @@ public partial class AddNewProduct : Window
             !int.TryParse(Kolvo_TextBox.Text, out int kolvo) ||
             !int.TryParse(Discountnow_TextBox.Text, out int discount))
         {
-            await MessageBox.ShowAsync("Проверьте данные", "Ошибка");
+            await MsBox.Avalonia.MessageBox.ShowAsync("Проверьте корректность ввода числовых значений (количество, цена, скидка).", "Ошибка ввода", ButtonEnum.Ok, Icon.Warning);
             return;
         }
 
         if (!SelectedTovarId.HasValue || !SelectedCategoryId.HasValue ||
             !SelectedProizvId.HasValue || !SelectedPostavschikId.HasValue)
         {
-            await MessageBox.ShowAsync("Пожалуйста, выберите товар, категорию, производителя и поставщика.", "Ошибка");
+            await MsBox.Avalonia.MessageBox.ShowAsync("Пожалуйста, выберите товар, категорию, производителя и поставщика.", "Ошибка выбора", ButtonEnum.Ok, Icon.Warning);
             return;
         }
 
@@ -150,13 +150,13 @@ public partial class AddNewProduct : Window
             _context.Listtovars.Add(newListtovar);
             await _context.SaveChangesAsync();
 
-            await MessageBox.ShowAsync("Продукт успешно добавлен!", "Успех");
+            await MsBox.Avalonia.MessageBox.ShowAsync("Продукт успешно добавлен!", "Успех", ButtonEnum.Ok, Icon.Success);
 
             Close();
         }
         catch (Exception ex)
         {
-            await MessageBox.ShowAsync($"Ошибка при добавлении продукта:\n{ex.Message}", "Ошибка");
+            await MsBox.Avalonia.MessageBox.ShowAsync($"Ошибка при добавлении продукта:\n{ex.Message}", "Ошибка", ButtonEnum.Ok, Icon.Error);
         }
     }
 }
