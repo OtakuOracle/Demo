@@ -106,7 +106,16 @@ public partial class UserWindow : Window
         }
     }
 
-    
+    private void EditTovar_Click(object? sender, Avalonia.Input.TappedEventArgs e)
+    {
+        if (ListBoxTovar.SelectedItem is Listtovar listtovar)
+        {
+            var editProduct = new EditTovar(listtovar);
+            editProduct.Show();
+            this.Close();
+        }
+
+    }
 
     private void ResetSearchButton_Click(object? sender, RoutedEventArgs e)
     {
