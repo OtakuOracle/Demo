@@ -10,14 +10,14 @@ using Demo_Vakhitova.Data;
 
 namespace Demo_Vakhitova;
 
-public partial class AddProductWindow : Window
+public partial class AddNewProduct: Window
 {
     public int? SelectedTovarId { get; set; }
     public int? SelectedCategoryId { get; set; }
     public int? SelectedProizvId { get; set; }
     public int? SelectedPostavschikId { get; set; }
 
-    public AddProductWindow()
+    public AddNewProduct()
     {
         InitializeComponent();
         LoadComboBoxData();
