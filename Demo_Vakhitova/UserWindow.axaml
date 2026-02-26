@@ -31,6 +31,11 @@
                      TextChanged="SearchTextBox_TextChanged" />
 
   <Button Content="Сбросить" Click="ResetSearchButton_Click" Background="#FFA07A"/>
+            <StackPanel Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
+                <TextBlock Text="Сортировать по количеству на складе:" VerticalAlignment="Center"/>
+                <Button Content="По возрастанию" Click="SortAscendingButton_Click" Tag="Ascending" Background="#ADD8E6"/>
+                <Button Content="По убыванию" Click="SortDescendingButton_Click" Tag="Descending" Background="#ADD8E6"/>
+            </StackPanel>
 
         </StackPanel>
       <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">

@@ -106,11 +106,14 @@ public partial class UserWindow : Window
         }
     }
 
+    
+
     private void ResetSearchButton_Click(object? sender, RoutedEventArgs e)
     {
         SearchTextBox.Text = "";
         PerformSearch();
     }
+
 
     protected override void OnClosed(EventArgs e)
     {
@@ -120,4 +123,6 @@ public partial class UserWindow : Window
             _context.Dispose();
         }
     }
+
 }
+
