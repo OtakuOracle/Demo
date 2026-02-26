@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Demo_Vakhitova")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e66f6fae2f20855b3290ded63c032e7295aac8ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d18356d3087fe423c1328ecbe9e58400dbbf53b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Demo_Vakhitova")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Demo_Vakhitova")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

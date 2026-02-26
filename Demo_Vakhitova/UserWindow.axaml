@@ -30,7 +30,7 @@
                      Watermark="Введите наименование товара..."
                      TextChanged="SearchTextBox_TextChanged" />
 
-=            <Button Content="Сбросить" Click="ResetSearchButton_Click" Background="#FFA07A"/>
+  <Button Content="Сбросить" Click="ResetSearchButton_Click" Background="#FFA07A"/>
 
         </StackPanel>
       <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">

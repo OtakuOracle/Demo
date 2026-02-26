@@ -4,38 +4,46 @@ using Demo_Vakhitova.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace Demo_Vakhitova;
 
 public partial class UserWindow : Window
 {
-    private readonly PostgresContext _context = new PostgresContext();
+    private readonly PostgresContext _context;
 
     private List<Listtovar> _allTovarList;
-
     public UserWindow()
     {
+        _context = new PostgresContext();
         InitializeComponent();
-        LoadAndDisplayTovars();
     }
 
-    private void LoadAndDisplayTovars()
+    protected override async void OnOpened(EventArgs e)
+    {
+        base.OnOpened(e);
+        await LoadAndDisplayTovars();
+    }
+
+    private async Task LoadAndDisplayTovars()
     {
         try
         {
-            _allTovarList = _context.Listtovars
+
+            _allTovarList = await _context.Listtovars
                 .Include(x => x.Category)
                 .Include(x => x.Postavschik)
                 .Include(x => x.Proizv)
-                .Include(x => x.Tovar).ToList();
+                .Include(x => x.Tovar)
+                .ToListAsync();
 
             ListBoxTovar.ItemsSource = _allTovarList;
         }
         catch (Exception ex)
         {
-            ShowMessageBox($"Ошибка загрузки товаров: {ex.Message}", "Ошибка");
+            Debug.WriteLine($"Ошибка загрузки товаров: {ex.Message}");
         }
     }
 
@@ -43,29 +51,33 @@ public partial class UserWindow : Window
     {
         MainWindow mainWindow = new MainWindow();
         mainWindow.Show();
-        Close(); 
+        Close();
     }
 
     private void AddNewProduct_Click(object? sender, RoutedEventArgs e)
     {
-        var addNewProduct = new AddProductWindow(); 
-        addNewProduct.Show();
 
-        addNewProduct.Closed += (s, args) =>
+        var addNewProductWindow = new AddNewProduct(_context);
+
+        addNewProductWindow.Closed += async (s, args) =>
         {
-            LoadAndDisplayTovars();
+            await LoadAndDisplayTovars();
         };
+
+        addNewProductWindow.Show();
     }
 
     private void SearchTextBox_TextChanged(object? sender, TextChangedEventArgs e)
     {
-        PerformSearch(); 
+        PerformSearch();
     }
 
     private void PerformSearch()
     {
+
         if (_allTovarList == null)
         {
+            ListBoxTovar.ItemsSource = null;
             return;
         }
 
@@ -77,20 +89,27 @@ public partial class UserWindow : Window
         }
         else
         {
-            var filteredList = _allTovarList.Where(t =>
-                t.Tovar.TovarName.ToLower().Contains(searchTerm) ||
-                t.Category.CategoryName.ToLower().Contains(searchTerm) ||
-                t.Description.ToLower().Contains(searchTerm)
-            ).ToList();
+            try
+            {
+                var filteredList = _allTovarList.Where(t =>
+                    t.Tovar != null && t.Tovar.TovarName.ToLower().Contains(searchTerm) ||
+                    t.Category != null && t.Category.CategoryName.ToLower().Contains(searchTerm) ||
+                    t.Description.ToLower().Contains(searchTerm)
+                ).ToList();
 
-            ListBoxTovar.ItemsSource = filteredList;
+                ListBoxTovar.ItemsSource = filteredList;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Ошибка при поиске: {ex.Message}");
+            }
         }
     }
 
     private void ResetSearchButton_Click(object? sender, RoutedEventArgs e)
     {
-        SearchTextBox.Text = ""; 
-        PerformSearch(); 
+        SearchTextBox.Text = "";
+        PerformSearch();
     }
 
     protected override void OnClosed(EventArgs e)
@@ -98,7 +117,7 @@ public partial class UserWindow : Window
         base.OnClosed(e);
         if (_context != null)
         {
-            _context.Dispose(); 
+            _context.Dispose();
         }
     }
 }

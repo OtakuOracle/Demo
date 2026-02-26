@@ -1,88 +1,111 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Demo_Vakhitova.Models;.
-using Demo_Vakhitova.Data;
-//using Avalonia.Controls.Platform.Dialogs
+using Demo_Vakhitova.Models;
+using Microsoft.EntityFrameworkCore;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Demo_Vakhitova;
 
-public partial class AddNewProduct: Window
+public partial class AddNewProduct : Window
 {
+    private readonly PostgresContext _context;
     public int? SelectedTovarId { get; set; }
     public int? SelectedCategoryId { get; set; }
     public int? SelectedProizvId { get; set; }
     public int? SelectedPostavschikId { get; set; }
 
-    public AddNewProduct()
+    public AddNewProduct(PostgresContext context)
     {
+        _context = context ?? throw new ArgumentNullException(nameof(context));
         InitializeComponent();
-        LoadComboBoxData();
     }
 
-    private void LoadComboBoxData()
+    protected override async void OnOpened(EventArgs e)
+    {
+        base.OnOpened(e);
+        await LoadComboBoxData();
+    }
+
+    private async Task LoadComboBoxData()
     {
         try
         {
-            Name_ComboBox.ItemsSource = PostgresContext.Instance.Tovars
-                .Select(x => x.TovarName).ToList();
-            Category_ComboBox.ItemsSource = PostgresContext.Instance.Categories
-                .Select(x => x.CategoryName).ToList();
-            Proizv_ComboBox.ItemsSource = PostgresContext.Instance.Proizvs
-                .Select(x => x.ProizvName).ToList();
-            Postavschik_ComboBox.ItemsSource = PostgresContext.Instance.Postavschiks
-                .Select(x => x.PostavschikName).ToList();
+            Name_ComboBox.ItemsSource = await _context.Tovars
+                .Select(x => x.TovarName)
+                .Distinct()
+                .ToListAsync();
+
+            Category_ComboBox.ItemsSource = await _context.Categories
+                .Select(x => x.CategoryName)
+                .Distinct()
+                .ToListAsync();
+
+            Proizv_ComboBox.ItemsSource = await _context.Proizvs
+                .Select(x => x.ProizvName)
+                .Distinct()
+                .ToListAsync();
+
+            Postavschik_ComboBox.ItemsSource = await _context.Postavschiks
+                .Select(x => x.PostavschikName)
+                .Distinct()
+                .ToListAsync();
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Ошибка загрузки данных: {ex.Message}", "Ошибка");
+
+            await MessageBox.ShowAsync($": {ex.Message}", "Ошибка загрузки данных");
         }
     }
 
-    private void SelectedName_ComboBox(object? sender, SelectionChangedEventArgs e)
+    private async void SelectedName_ComboBox(object? sender, SelectionChangedEventArgs e)
     {
         if (Name_ComboBox.SelectedItem != null)
         {
             var selectedName = Name_ComboBox.SelectedItem.ToString()!;
-            SelectedTovarId = PostgresContext.Instance.Tovars
-                .FirstOrDefault(t => t.TovarName == selectedName)?.TovarId;
+            SelectedTovarId = (await _context.Tovars
+                .FirstOrDefaultAsync(t => t.TovarName == selectedName))?.TovarId;
         }
     }
 
-    private void SelectedCategory_ComboBox(object? sender, SelectionChangedEventArgs e)
+    private async void SelectedCategory_ComboBox(object? sender, SelectionChangedEventArgs e)
     {
         if (Category_ComboBox.SelectedItem != null)
         {
             var selectedCategory = Category_ComboBox.SelectedItem.ToString()!;
-            SelectedCategoryId = PostgresContext.Instance.Categories
-                .FirstOrDefault(c => c.CategoryName == selectedCategory)?.CategoryId;
+            SelectedCategoryId = (await _context.Categories
+                .FirstOrDefaultAsync(c => c.CategoryName == selectedCategory))?.CategoryId;
         }
     }
 
-    private void SelectedProizv_ComboBox(object? sender, SelectionChangedEventArgs e)
+    private async void SelectedProizv_ComboBox(object? sender, SelectionChangedEventArgs e)
     {
         if (Proizv_ComboBox.SelectedItem != null)
         {
             var selectedProizv = Proizv_ComboBox.SelectedItem.ToString()!;
-            SelectedProizvId = PostgresContext.Instance.Proizvs
-                .FirstOrDefault(p => p.ProizvName == selectedProizv)?.ProizvId;
+            SelectedProizvId = (await _context.Proizvs
+                .FirstOrDefaultAsync(p => p.ProizvName == selectedProizv))?.ProizvId;
         }
     }
 
-    private void SelectedPostavschik_ComboBox(object? sender, SelectionChangedEventArgs e)
+    private async void SelectedPostavschik_ComboBox(object? sender, SelectionChangedEventArgs e)
     {
         if (Postavschik_ComboBox.SelectedItem != null)
         {
             var selectedPostavschik = Postavschik_ComboBox.SelectedItem.ToString()!;
-            SelectedPostavschikId = PostgresContext.Instance.Postavschiks
-                .FirstOrDefault(p => p.PostavschikName == selectedPostavschik)?.PostavschikId;
+            SelectedPostavschikId = (await _context.Postavschiks
+                .FirstOrDefaultAsync(p => p.PostavschikName == selectedPostavschik))?.PostavschikId;
         }
     }
 
-    private void AddProduct_OnClick(object? sender, RoutedEventArgs e)
+
+
+    private async void AddProduct_OnClick(object? sender, RoutedEventArgs e)
     {
         if (string.IsNullOrWhiteSpace(Description_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Count_TextBox.Text) ||
@@ -90,7 +113,7 @@ public partial class AddNewProduct: Window
             string.IsNullOrWhiteSpace(Kolvo_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Discountnow_TextBox.Text))
         {
-            MessageBox.Show("Заполните все текстовые поля!", "Ошибка валидации");
+            await MessageBox.ShowAsync("Пожалуйста, заполните все текстовые поля.", "Ошибка");
             return;
         }
 
@@ -98,14 +121,14 @@ public partial class AddNewProduct: Window
             !int.TryParse(Kolvo_TextBox.Text, out int kolvo) ||
             !int.TryParse(Discountnow_TextBox.Text, out int discount))
         {
-            MessageBox.Show("Проверьте корректность", "Ошибка числовых данных");
+            await MessageBox.ShowAsync("Проверьте данные", "Ошибка");
             return;
         }
 
         if (!SelectedTovarId.HasValue || !SelectedCategoryId.HasValue ||
             !SelectedProizvId.HasValue || !SelectedPostavschikId.HasValue)
         {
-            MessageBox.Show("Выберите все значения", "Ошибка выбора");
+            await MessageBox.ShowAsync("Пожалуйста, выберите товар, категорию, производителя и поставщика.", "Ошибка");
             return;
         }
 
@@ -114,30 +137,26 @@ public partial class AddNewProduct: Window
             var newListtovar = new Listtovar
             {
                 Description = Description_TextBox.Text,
-                Count = count, 
+                Count = count,
                 Unity = Unity_TextBox.Text,
-                Kolvo = kolvo, 
-                Discountnow = discount, 
+                Kolvo = kolvo,
+                Discountnow = discount,
                 TovarId = SelectedTovarId.Value,
                 PostavschikId = SelectedPostavschikId.Value,
                 ProizvId = SelectedProizvId.Value,
                 CategoryId = SelectedCategoryId.Value
             };
 
-            PostgresContext.Instance.Listtovars.Add(newListtovar);
-            PostgresContext.Instance.SaveChanges();
+            _context.Listtovars.Add(newListtovar);
+            await _context.SaveChangesAsync();
 
-            MessageBox.Show(" Товар добавлен!", "Успех");
+            await MessageBox.ShowAsync("Продукт успешно добавлен!", "Успех");
 
-            UserWindow userWindow = new UserWindow();
-            userWindow.Show();
             Close();
         }
         catch (Exception ex)
         {
-            MessageBox.Show($" Ошибка при сохранении в БД:\n{ex.Message}", "Ошибка базы данных");
+            await MessageBox.ShowAsync($"Ошибка при добавлении продукта:\n{ex.Message}", "Ошибка");
         }
     }
-
-
 }

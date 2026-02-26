@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4MKAqQx5piU=",
+  "dgSpecHash": "1ksZuLk8w4o=",
   "success": true,
   "projectFilePath": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Demo_Vakhitova.csproj",
   "expectedPackageFiles": [
@@ -19,12 +19,14 @@
     "C:\\Users\\User1.11\\.nuget\\packages\\avalonia.themes.simple\\11.3.12\\avalonia.themes.simple.11.3.12.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\avalonia.win32\\11.3.12\\avalonia.win32.11.3.12.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\avalonia.x11\\11.3.12\\avalonia.x11.11.3.12.nupkg.sha512",
+    "C:\\Users\\User1.11\\.nuget\\packages\\dialoghost.avalonia\\0.8.1\\dialoghost.avalonia.0.8.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\harfbuzzsharp\\8.3.1.1\\harfbuzzsharp.8.3.1.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\8.3.1.1\\harfbuzzsharp.nativeassets.linux.8.3.1.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\8.3.1.1\\harfbuzzsharp.nativeassets.macos.8.3.1.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\8.3.1.1\\harfbuzzsharp.nativeassets.webassembly.8.3.1.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.1\\harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\User1.11\\.nuget\\packages\\messagebox.avalonia\\3.3.1.1\\messagebox.avalonia.3.3.1.1.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.11.0\\microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",
@@ -67,15 +69,5 @@
     "C:\\Users\\User1.11\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
     "C:\\Users\\User1.11\\.nuget\\packages\\tmds.dbus.protocol\\0.21.2\\tmds.dbus.protocol.0.21.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Произошла ошибка при получении данных уязвимости пакета: Не удалось загрузить индекс службы для источника https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Demo_Vakhitova.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Demo_Vakhitova.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
