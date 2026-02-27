@@ -534,3 +534,5 @@ C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\obj\Debug\net10.0\refint\Demo_Vakh
 C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\obj\Debug\net10.0\Demo_Vakhitova.pdb
 C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\obj\Debug\net10.0\Demo_Vakhitova.genruntimeconfig.cache
 C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\obj\Debug\net10.0\ref\Demo_Vakhitova.dll
+C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\bin\Debug\net10.0\DialogHost.Avalonia.dll
+C:\Users\User1.11\Desktop\Demo\Demo_Vakhitova\bin\Debug\net10.0\MsBox.Avalonia.dll

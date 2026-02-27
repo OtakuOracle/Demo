@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\User1.11\\Desktop\\Demo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\addnewproduct.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\addnewproduct.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\addnewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\addnewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\addnewproduct.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\addnewproduct.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\models\\listtovar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\models\\listtovar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\userwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +25,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\userwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\userwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|c:\\users\\user1.11\\desktop\\demo\\demo_vakhitova\\models\\postavschik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{655E40C4-E99A-7C83-6D21-CB3068287143}|Demo_Vakhitova\\Demo_Vakhitova.csproj|solutionrelative:demo_vakhitova\\models\\postavschik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +46,119 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddNewProduct.cs",
-              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\AddNewProduct.cs",
-              "RelativeDocumentMoniker": "Demo_Vakhitova\\AddNewProduct.cs",
-              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\AddNewProduct.cs",
-              "RelativeToolTip": "Demo_Vakhitova\\AddNewProduct.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAuwGgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\MainWindow.axaml.cs",
+              "RelativeDocumentMoniker": "Demo_Vakhitova\\MainWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\MainWindow.axaml.cs",
+              "RelativeToolTip": "Demo_Vakhitova\\MainWindow.axaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T14:26:40.791Z",
+              "WhenOpened": "2026-02-27T08:29:23.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "Demo_Vakhitova\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\MainWindow.axaml",
+              "RelativeToolTip": "Demo_Vakhitova\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-27T08:29:20.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AddNewProduct.axaml",
               "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\AddNewProduct.axaml",
               "RelativeDocumentMoniker": "Demo_Vakhitova\\AddNewProduct.axaml",
               "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\AddNewProduct.axaml",
               "RelativeToolTip": "Demo_Vakhitova\\AddNewProduct.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-26T14:26:36.734Z",
+              "WhenOpened": "2026-02-27T07:13:41.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "Postavschik.cs",
+              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Models\\Postavschik.cs",
+              "RelativeDocumentMoniker": "Demo_Vakhitova\\Models\\Postavschik.cs",
+              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Models\\Postavschik.cs",
+              "RelativeToolTip": "Demo_Vakhitova\\Models\\Postavschik.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:12:56.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\UserWindow.axaml.cs",
               "RelativeDocumentMoniker": "Demo_Vakhitova\\UserWindow.axaml.cs",
               "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\UserWindow.axaml.cs",
               "RelativeToolTip": "Demo_Vakhitova\\UserWindow.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAswKkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T14:26:28.824Z",
+              "WhenOpened": "2026-02-27T07:12:44.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UserWindow.axaml",
               "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\UserWindow.axaml",
               "RelativeDocumentMoniker": "Demo_Vakhitova\\UserWindow.axaml",
               "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\UserWindow.axaml",
               "RelativeToolTip": "Demo_Vakhitova\\UserWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-26T14:24:16.083Z",
+              "WhenOpened": "2026-02-27T07:12:40.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Listtovar.cs",
+              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Models\\Listtovar.cs",
+              "RelativeDocumentMoniker": "Demo_Vakhitova\\Models\\Listtovar.cs",
+              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Models\\Listtovar.cs",
+              "RelativeToolTip": "Demo_Vakhitova\\Models\\Listtovar.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:42:33.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddNewProduct.cs",
+              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\AddNewProduct.cs",
+              "RelativeDocumentMoniker": "Demo_Vakhitova\\AddNewProduct.cs",
+              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\AddNewProduct.cs",
+              "RelativeToolTip": "Demo_Vakhitova\\AddNewProduct.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAmwMYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T07:13:43.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Demo_Vakhitova\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\User1.11\\Desktop\\Demo\\Demo_Vakhitova\\Models\\User.cs",
+              "RelativeToolTip": "Demo_Vakhitova\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T08:33:27.875Z",
               "EditorCaption": ""
             }
           ]

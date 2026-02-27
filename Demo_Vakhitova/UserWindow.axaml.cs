@@ -70,7 +70,7 @@ public partial class UserWindow : Window
 
             foreach (var supplier in suppliers)
             {
-                SupplierFilterComboBox.Items.Add(new ComboBoxItem { Content = supplier.PostavschikName, Tag = supplier.IdPostavschik });
+                SupplierFilterComboBox.Items.Add(new ComboBoxItem { Content = supplier.PostavschikName, Tag = supplier.PostavschikId });
             }
 
             SupplierFilterComboBox.SelectedIndex = 0; 
@@ -147,7 +147,7 @@ public partial class UserWindow : Window
             {
                 if (int.TryParse(supplierId, out int id))
                 {
-                    filteredList = filteredList.Where(t => t.IdPostavschik == id);
+                    filteredList = filteredList.Where(t => t.PostavschikId == id);
                 }
             }
         }
@@ -173,19 +173,6 @@ public partial class UserWindow : Window
     }
 
 
-    private void EditTovar_Click(object? sender, TappedEventArgs e)
-    {
-        if (ListBoxTovar.SelectedItem is Listtovar listtovar)
-        {
-            var editProduct = new EditTovar(listtovar);
-            editProduct.Closed += async (s, args) =>
-            {
-                await LoadAndDisplayTovars(); 
-            };
-            editProduct.Show();
-            this.Close();
-        }
-    }
 
 
     protected override void OnClosed(EventArgs e)

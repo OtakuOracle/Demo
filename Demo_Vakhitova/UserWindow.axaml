@@ -22,7 +22,7 @@
                     Margin="10">
 
             <Button Click="AddNewProduct_Click"
-                  Content="Добавить" Background="#00FA9A"/>
+                  Content="Добавить новый продукт" Background="#00FA9A"/>
             <TextBox Name="SearchTextBox"
                      Width="200"
                      Height="30"
@@ -46,7 +46,7 @@
             <Button Content="Сбросить фильтры" Click="ResetSearchButton_Click" Background="#FFA07A"/>
 
         </StackPanel>
-        <ListBox Name="ListBoxTovar" Width="1000" Height="1000" Background="#7FFF00">
+        <ListBox Name="ListBoxTovar" Width="700" Height="700" Background="#7FFF00">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions="100,450,*">

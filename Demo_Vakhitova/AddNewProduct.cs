@@ -14,6 +14,7 @@ namespace Demo_Vakhitova;
 
 public partial class AddNewProduct : Window
 {
+    private string? _imageName = null;
     private readonly PostgresContext _context;
     public int? SelectedTovarId { get; set; }
     public int? SelectedCategoryId { get; set; }
@@ -58,8 +59,8 @@ public partial class AddNewProduct : Window
         }
         catch (Exception ex)
         {
-            //проверить
-            await MsBox.Avalonia.MessageBox.ShowAsync($"Ошибка загрузки данных: {ex.Message}", "Ошибка загрузки данных", ButtonEnum.Ok, Icon.Error); 
+            var box = MessageBoxManager.GetMessageBoxStandard("Ошибка загрузки данных", "Ошибка", ButtonEnum.Ok);
+            var result = await box.ShowAsync();
         }
     }
 
@@ -107,33 +108,37 @@ public partial class AddNewProduct : Window
 
     private async void AddProduct_OnClick(object? sender, RoutedEventArgs e)
     {
+
         if (string.IsNullOrWhiteSpace(Description_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Count_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Unity_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Kolvo_TextBox.Text) ||
             string.IsNullOrWhiteSpace(Discountnow_TextBox.Text))
         {
-            await MsBox.Avalonia.MessageBox.ShowAsync("Пожалуйста, заполните все текстовые поля.", "Ошибка", ButtonEnum.Ok, Icon.Warning);
-            return;
+            var box = MessageBoxManager.GetMessageBoxStandard("Заполните все поля", "Ошибка", ButtonEnum.Ok);
+            var result = await box.ShowAsync();
         }
 
-        if (!int.TryParse(Count_TextBox.Text, out int count) ||
-            !int.TryParse(Kolvo_TextBox.Text, out int kolvo) ||
-            !int.TryParse(Discountnow_TextBox.Text, out int discount))
+        if (!int.TryParse(Count_TextBox.Text, out int cena) ||
+            !int.TryParse(Kolvo_TextBox.Text, out int kolich) ||
+            !int.TryParse(Discountnow_TextBox.Text, out int disc))
         {
-            await MsBox.Avalonia.MessageBox.ShowAsync("Проверьте корректность ввода числовых значений (количество, цена, скидка).", "Ошибка ввода", ButtonEnum.Ok, Icon.Warning);
-            return;
+            var box = MessageBoxManager.GetMessageBoxStandard("Проверьте корректность ввода числовых значений", "Ошибка ввода", ButtonEnum.Ok);
+            var result = await box.ShowAsync();
         }
 
         if (!SelectedTovarId.HasValue || !SelectedCategoryId.HasValue ||
             !SelectedProizvId.HasValue || !SelectedPostavschikId.HasValue)
         {
-            await MsBox.Avalonia.MessageBox.ShowAsync("Пожалуйста, выберите товар, категорию, производителя и поставщика.", "Ошибка выбора", ButtonEnum.Ok, Icon.Warning);
-            return;
+            var box = MessageBoxManager.GetMessageBoxStandard("Пожалуйста, выберите товар, категорию, производителя и поставщика", "Ошибка выбора", ButtonEnum.Ok);
+            var result = await box.ShowAsync();
         }
 
         try
         {
+            var count = int.Parse(Count_TextBox.Text);
+            var kolvo = int.Parse(Kolvo_TextBox.Text);
+            var discount = int.Parse(Discountnow_TextBox.Text);
             var newListtovar = new Listtovar
             {
                 Description = Description_TextBox.Text,
@@ -144,19 +149,50 @@ public partial class AddNewProduct : Window
                 TovarId = SelectedTovarId.Value,
                 PostavschikId = SelectedPostavschikId.Value,
                 ProizvId = SelectedProizvId.Value,
-                CategoryId = SelectedCategoryId.Value
+                CategoryId = SelectedCategoryId.Value,
+                Photo = _imageName
             };
 
             _context.Listtovars.Add(newListtovar);
             await _context.SaveChangesAsync();
 
-            await MsBox.Avalonia.MessageBox.ShowAsync("Продукт успешно добавлен!", "Успех", ButtonEnum.Ok, Icon.Success);
-
+            var box = MessageBoxManager.GetMessageBoxStandard("Успешное добавление", "Добавлен", ButtonEnum.Ok);
+            var result = await box.ShowAsync();
             Close();
         }
         catch (Exception ex)
         {
-            await MsBox.Avalonia.MessageBox.ShowAsync($"Ошибка при добавлении продукта:\n{ex.Message}", "Ошибка", ButtonEnum.Ok, Icon.Error);
+            var box = MessageBoxManager.GetMessageBoxStandard("Ошибка добавления", "Не добавлен", ButtonEnum.Ok);
+            var result = await box.ShowAsync();
+        }
+    }
+        private async void AddImage_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var topLevel = TopLevel.GetTopLevel(this);
+
+        try
+        {
+            var files = await topLevel.StorageProvider.OpenFilePickerAsync(new Avalonia.Platform.Storage.FilePickerOpenOptions
+            {
+                Title = "Выбор изображения",
+                FileTypeFilter = new[] { Avalonia.Platform.Storage.FilePickerFileTypes.ImageAll }
+            });
+
+            if (files.Count > 0)
+            {
+                _imageName = files[0].Name;
+                using var stream = await files[0].OpenReadAsync();
+                ImageBox.Source = new Avalonia.Media.Imaging.Bitmap(stream);
+            }
+        }
+        catch (Exception ex)
+        {
+            await MessageBoxManager.GetMessageBoxStandard(
+                "Ошибка",
+                $"Не удалось загрузить изображение: {ex.Message}",
+                MsBox.Avalonia.Enums.ButtonEnum.Ok,
+                MsBox.Avalonia.Enums.Icon.Error
+            ).ShowAsync();
         }
     }
 }

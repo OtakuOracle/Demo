@@ -1,6 +1,8 @@
-﻿using Avalonia.Media.Imaging;
+﻿using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using System;
 using System.Collections.Generic;
+
 
 namespace Demo_Vakhitova.Models;
 
@@ -43,6 +45,27 @@ public partial class Listtovar
             }
         }
     }
+    //public Brush Background { get; set; }
+    //public void GetBackground()
+    //{
+    //    if (Discountnow >= 15)
+    //    {
+    //        Background = (Brush)new BrushConverter().ConvertFromString("#2e8b57");
+    //        return;
+    //    }
+    //    else if (Discountnow == 0)
+    //    {
+    //       Background = new SolidColorBrush(Colors.LightBlue);
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        Background = (Brush)new BrushConverter().ConvertFromString("#7fff00");
+    //        return;
+    //    }
+    //}
+
+
 
     public virtual Category? Category { get; set; }
 
